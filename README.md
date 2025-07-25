@@ -19,7 +19,7 @@ Try the app live here: https://pomodoro.genlab.app/
 ### Prerequisites
 
 - Node.js (v14+ recommended)
-- npm or yarn package manager
+- npm
 
 ### Installation
 
