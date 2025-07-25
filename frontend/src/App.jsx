@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import './App.css'
 
 function App() {
@@ -35,45 +35,52 @@ function App() {
     };
 
     return (
-        <>
-            <h1>Pomodoro</h1>
-            <div className="row">
-                <TimeCard time={10} onClick={() => handleTimeSelect(10)} />
-                <TimeCard time={15} onClick={() => handleTimeSelect(15)} />
-                <TimeCard time={25} onClick={() => handleTimeSelect(25)} />
-            </div>
-            <div className="row">
-                <TimeCard time={30} onClick={() => handleTimeSelect(30)} />
-                <TimeCard time={45} onClick={() => handleTimeSelect(45)} />
-                <TimeCard time={60} onClick={() => handleTimeSelect(60)} />
-            </div>
-            <div className="column">
-                <CountdownCard seconds={seconds} />
-                <progress max={initialSeconds} value={initialSeconds - seconds}></progress>
-                <div className={"row"}>
-                    <button onClick={startCountdown}>Start</button>
-                    <button onClick={clearCountdown}>Reset</button>
+        <div className="container">
+            <h1 style={{fontFamily: "Roboto"}}>Pomodoro</h1>
+
+            <section>
+                <div className="row">
+                    <TimeCard time={10} onClick={() => handleTimeSelect(10)}/>
+                    <TimeCard time={15} onClick={() => handleTimeSelect(15)}/>
+                    <TimeCard time={25} onClick={() => handleTimeSelect(25)}/>
                 </div>
-            </div>
-        </>
-    );
+                <div className="row">
+                    <TimeCard time={30} onClick={() => handleTimeSelect(30)}/>
+                    <TimeCard time={45} onClick={() => handleTimeSelect(45)}/>
+                    <TimeCard time={60} onClick={() => handleTimeSelect(60)}/>
+                </div>
+            </section>
+
+            <section>
+                <div className="column">
+                    <CountdownCard seconds={seconds}/>
+                    <progress max={initialSeconds} value={initialSeconds - seconds}></progress>
+                    <div className={"row"}>
+                        <button onClick={startCountdown}>Start</button>
+                        <button onClick={clearCountdown}>Reset</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    )
+        ;
 }
 
-function TimeCard({ time, onClick }) {
+function TimeCard({time, onClick}) {
     return (
-        <div className="time-card" onClick={onClick} style={{ cursor: 'pointer' }}>
+        <div className="time-card" onClick={onClick} style={{cursor: 'pointer'}}>
             {time} minutes
         </div>
     )
 }
 
 
-function CountdownCard({ seconds }) {
+function CountdownCard({seconds}) {
     const minutes = Math.floor(seconds / 60);
     const sec = seconds % 60;
     const paddedSec = sec < 10 ? `0${sec}` : sec;
     return (
-        <h2 style={{ fontFamily: "Orbitron", fontSize: "2rem" }}>
+        <h2 style={{fontFamily: "Orbitron", fontSize: "2rem"}}>
             {minutes}:{paddedSec}
         </h2>
     );
