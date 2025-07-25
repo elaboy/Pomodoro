@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { Analytics } from '@vercel/analytics/react';
 import './App.css'
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                     </div>
                 </div>
             </section>
+            <Analytics mode="production" />
         </div>
     )
         ;
