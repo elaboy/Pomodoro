@@ -27,7 +27,7 @@ Try the app live here: https://pomodoro.genlab.app/
 git clone https://github.com/elaboy/Pomodoro.git
 cd Pomodoro/frontend
 npm install
-npm start
+npm run dev 
 ```
 
 ## Roadmap
