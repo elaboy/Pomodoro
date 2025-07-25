@@ -1,0 +1,61 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgb(19, 18, 18);
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+
+progress {
+  /*margin-top: 10rem;*/
+  height: 2rem;
+  margin-bottom: 1rem;
+  width: 75%;
+  accent-color: #9FD356;
+}
+
+.time-card {
+  font-family: Orbitron;
+  font-size: clamp(1rem, 3vw, 2rem);
+  padding: 1rem;
+  display: flex;
+  background-color: rgb(60, 145, 230);
+  margin: 1rem;
+  width: 15%;
+  height: 5rem;
+  color: white;
+  border-radius: 1.5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-card:hover {
+  cursor: pointer;
+}
+
+button {
+  color: white;
+  font-size: clamp(1rem, 3vw, 2rem);
+  padding: 1rem;
+  background-color: rgb(60, 145, 230);
+  border: none;
+  border-radius: 1.5rem;
+  margin-right: 1rem;
+  height: 4rem;
+  width: 10rem;
+}
